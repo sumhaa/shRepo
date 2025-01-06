@@ -49,6 +49,16 @@ function MemberUpdate(props){
 
 
     //REST API
+    const update = async () => {
+        const req = {
+            password: pwd,
+            passwordCheck: checkPwd,
+            username: name,
+        };
+
+        await axios.post("http://localhost:8080/user/update", req, {headers: headers}).then((resp))
+
+    }
 
     //HTML
 

@@ -45,6 +45,10 @@ public class Member extends BaseTimeEntity implements UserDetails {
     private Role roles;
 
     //JPA 연관관계
+    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    public List<>
+
+
     //(1)게시판
     //(2)댓글
 

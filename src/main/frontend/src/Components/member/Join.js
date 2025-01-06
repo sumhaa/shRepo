@@ -29,9 +29,46 @@ function  join(){
 
 
     //REST API: 아이디 중복 체크
+    const checkEmailDuplicate = async () => {
+    await axios.get("http://localhost:8080/user/checkId", {params: {email: email}})
+        .then((resp) => {
+        console.log(resp.data);
 
+        if (resp.status === 200) {
+            alert("사용 가능한 이메일입니다.");
+            }
+        })
+        .catch((err) => {
+            console.log(err);
+            const resp = err.response;
+
+            if(resp.status === 400){
+                alert(resp.data);
+            }
+        });
+    };
 
     //REST API: 회원가입
+    const join = async() => {
+        const req = {
+            email: email,
+            password: pwd,
+            passwordCheck: checkPwd,
+            username: name,
+        };
+        await axios.post("http://localhost:8080/user/register", req)
+            .then((rest) => {
+                console.log(resp.data);
+                alert(resp.data.username + "님 회원가입을 축하드립니다.");
+                navigate("/login");
+            }).catch((err) => {
+                console.log(err);
+                const resp = err.response;
+                if(resp.status === 400){
+                    alert(resp.data);
+                }
+            });
+    };
 
 
 

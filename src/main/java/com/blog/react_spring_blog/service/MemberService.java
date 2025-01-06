@@ -3,6 +3,10 @@ package com.blog.react_spring_blog.service;
 //!!
 
 import com.blog.react_spring_blog.common.exception.MemberException;
+import com.blog.react_spring_blog.dto.request.member.MemberLoginDto;
+import com.blog.react_spring_blog.dto.response.member.MemberResponseDto;
+import com.blog.react_spring_blog.dto.response.member.MemberTokenDto;
+import com.blog.react_spring_blog.entity.Member;
 import com.blog.react_spring_blog.repository.MemberRepository;
 import com.blog.react_spring_blog.security.jwt.CustomUserDetailsService;
 import com.blog.react_spring_blog.security.jwt.JwtTokenUtil;
@@ -14,6 +18,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -40,7 +45,11 @@ public class MemberService {
     //메서드-1
     //메서드-2
     //메서드-3
-    //메서드-4
+
+
+    //메서드-4 체크
+
+
 
     //--------------■사용자 인증(파라미터 email/password)
     //authenticationManager -> authenticate()
